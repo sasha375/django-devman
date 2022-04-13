@@ -32,7 +32,7 @@
                   <img class="card-img rounded-0" src="{{post.image_url}}" alt="{{post.title}}">
                 </div>
                 <div class="blog__slide__content">
-                  <h3><a href="{% url 'post/{{post.slug}}' %}">{{post.title}}</a></h3>
+                  <h3><a href="url('post/', {{post.slug}})">{{post.title}}</a></h3>
                   <p>2 days ago</p>
                 </div>
               </div>
@@ -67,7 +67,7 @@
                   <p>
                     {{ post.text|truncatechars_html:200 }}
                   </p>
-                  <a class="button" href="{% url 'post/{{post.slug}}' %}">Read More <i class="ti-arrow-right"></i></a>
+                  <a class="button" href="{% url 'post' post.slug %}">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
             {% endfor %}
